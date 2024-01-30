@@ -1,0 +1,489 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+  background-image: url("img/11_start-background/game-background.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+h1 {
+  font-family: "Ceviche One", Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  background: -webkit-linear-gradient(#fab216, #ffdc00, #ff9100);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  margin: 0;
+}
+
+#fullscreen:fullscreen h1 {
+  display: none;
+}
+
+#fullscreen:fullscreen canvas {
+  width: 93%;
+}
+
+#fullscreen:fullscreen #playBtn {
+  margin-top: 8%;
+  height: 100px;
+  width: auto;
+}
+
+canvas {
+  background-color: black;
+  display: flex;
+}
+
+#gameContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid rgb(69, 75, 73);
+  box-sizing: border-box;
+}
+
+#rotateScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  color: white;
+  font-size: 24px;
+  transition: visibility 0s linear 0.7s, opacity 0.7s linear;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#rotateScreen img {
+  height: 100px;
+}
+
+#startScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("img/9_intro_outro_screens/start/startscreen_1.png");
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+#endScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  visibility: hidden;
+  background-position: center;
+  background-size: 100% 100%;
+  transition: visibility 0s linear 0.7s, opacity 0.7s linear;
+  backdrop-filter: blur(8px);
+}
+
+.mainSection {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#gameMenu {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#touchControls {
+  display: none;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+}
+
+#settingIcons {
+  display: flex;
+  margin-left: 10px;
+}
+
+#gameMenu img,
+.pauseMenuIcons {
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+}
+
+.roundBtn {
+  margin: 5px;
+}
+
+#playBtn {
+  margin-top: 24px;
+  position: absolute;
+  height: 90px;
+  width: fit-content;
+}
+
+#pauseIcon {
+  display: none;
+}
+
+#infoIcon,
+#controlsIcon,
+.d-flex,
+.roundIconWrapper,
+.bigIconWrapper {
+  display: flex;
+}
+
+.roundIconWrapper {
+  gap: 10px;
+}
+
+.controlsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popUp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transform: translateY(0%);
+}
+
+.popUpMenu {
+  height: 80%;
+  width: 60%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.popUpBackground {
+  margin-top: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.controlsBackgroundImg {
+  background-image: url("img/12_icons/Menu_bgr_controls.png");
+}
+
+.storyBackgroundImg {
+  background-image: url("img/12_icons/Menu_bgr_story.png");
+}
+
+.pauseBackgroundImg {
+  background-image: url("img/12_icons/Menu_bgr_pause.png");
+}
+
+.controlsContent {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-size: 18px;
+}
+
+.controlColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.storyContent {
+  height: 200px;
+  width: 300px;
+  margin-top: 25%;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pauseContent {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: visible;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pauseButtons {
+  margin: 0;
+  height: 80px;
+  width: fit-content;
+}
+
+#resumeBtn,
+#restartBtn {
+  cursor: pointer;
+}
+
+#menuBtn {
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20%;
+  right: 12%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+#infoIcon:hover,
+#controlsIcon:hover,
+#gameMenu img:hover,
+.pauseMenuIcons:hover,
+.btn:hover,
+.hover-effect:hover {
+  scale: 1.1;
+}
+
+.clickableOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.cactusBackground {
+  position: absolute;
+  height: 84%;
+  width: 85%;
+  margin-bottom: 22px;
+  background-image: url("img/12_icons/Menu_bgr_cactus.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -3;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.controlBtn {
+  height: 42px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.btn {
+  width: 132px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.endscreenBtn {
+  height: 90px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Smartphones - - - - - - - - - */
+@media only screen and (max-width: 720px) {
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 660px) or (max-height: 430px) {
+  .controlColumn {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 620px) or (max-height: 400px) {
+  .popUpMenu {
+    width: 100%;
+  }
+
+  .controlsContent {
+    margin-top: 11%;
+  }
+
+  .controlBtn {
+    height: 38px;
+  }
+
+  .closeIcon {
+    top: 17%;
+    right: 10%;
+  }
+
+  .storyContent {
+    height: 200px;
+    width: 300px;
+    margin-top: 17%;
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 370px) {
+  .storyContent {
+    height: 190px;
+    width: 290px;
+  }
+}
+
+@media (max-width: 530px) or (max-height: 330px) {
+  .controlColumn {
+    gap: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  #rotateScreen {
+    display: flex;
+  }
+}
+
+@media (max-width: 325px) {
+  #rotateScreen {
+    gap: 8px;
+    color: white;
+    font-size: 20px;
+  }
+
+  #rotateScreen img {
+    height: 70px;
+  }
+}
+
+/* Smartphones - - - - - - - - - */
+@media only screen and (max-height: 680px) {
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    display: none;
+  }
+}
+
+@media (max-height: 480px) {
+  canvas {
+    height: 100vh;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
